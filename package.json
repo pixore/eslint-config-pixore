@@ -1,0 +1,61 @@
+{
+  "name": "@pixore/eslint-config",
+  "version": "0.0.0",
+  "description": "Official pixore lint config",
+  "keywords": [
+    "eslint",
+    "pixore"
+  ],
+  "author": "Jose Albizures <jose@albizures.com",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint . --config=eslintrc.js",
+    "test": "npm run lint && jest"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^1.5.0",
+    "@typescript-eslint/parser": "^1.5.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-config-standard-react": "^7.0.2",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-standard": "^4.0.0"
+  },
+  "files": [
+    "eslintrc.js",
+    "index.js",
+    "react.js",
+    "preset.js"
+  ],
+  "peerDependencies": {
+    "eslint": ">=5.16.0",
+    "typescript": ">=3.4.1"
+  },
+  "devDependencies": {
+    "@pixore/prettier-config": "0.0.2",
+    "eslint": "~5.16.0",
+    "husky": "^1.3.1",
+    "jest": "^24.5.0",
+    "lint-staged": "^8.1.5",
+    "prettier": "^1.16.4",
+    "typescript": "^3.4.0"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "license": "MIT",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{json,md,js}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
